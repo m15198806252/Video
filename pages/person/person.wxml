@@ -1,0 +1,4 @@
+<!--pages/person/person.wxml-->
+<view class="person-container">
+  <text>我的</text>
+</view>

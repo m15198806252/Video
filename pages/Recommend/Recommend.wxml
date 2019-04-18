@@ -1,0 +1,4 @@
+<!--pages/Recommend/Recommend.wxml-->
+<view class='recommend-contain'>
+  <text>推荐</text>
+</view>

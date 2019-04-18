@@ -11,5 +11,8 @@ Page({
         return util.formatTime(new Date(log))
       })
     })
-  }
+  },
+  clickMe() {
+    console.log(123)
+  },
 })

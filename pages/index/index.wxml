@@ -1,13 +1,33 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+<view class="home-container">
+    <view>
+        <!-- 文本 -->
+        <text></text>
+        <button type="default" wx:if='{{videoIn==true}}'  size="{{warnSize}}" loading="{{loading}}" plain="{{plain}}" bindtap="default" class="intobtn"
+        >
+        快乐尽在HappyVideo
+        </button>
+    </view>
+    <!-- 视频 -->
+
+
+    <view class='video-container'  wx:if="{{videobox ==true}}">
+          <video src="{{src}}" controls></video>
+            <view class="btn-area"></view>
+          <view class="section tc" wx:if="{{videobox ==true}}">
+            <video
+              id="myVideo"
+              src=""
+              danmu-list="{{danmuList}}"
+              enable-danmu
+              danmu-btn
+              controls>
+              </video>
+            </view>
+            <view class="btn-area" wx:if="{{videobox ==true}}">
+              <button bindtap="bindButtonTap">获取视频</button>
+              <input bindblur="bindInputBlur" />
+              <button bindtap="bindSendDanmu">发送弹幕</button>
+            </view>
+    </view>
 </view>
